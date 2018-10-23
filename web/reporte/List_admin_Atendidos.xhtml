@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:composition template="/template_admin.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListReporteTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <c:if test="#{sessionScope['Especialista']==null}" scope="#{sessionScope['Especialista']==null}" >
+                <h:form>
+                    <p:poll interval="0" listener="#{login.cerrar()}"/>
+                </h:form>
+            </c:if>
+            <h:form id="ReporteListForm">
+                <p:panel header="#{bundle.ListReporteTitleAtendidos}">
+                    <p:dataTable id="datalist" value="#{reporteController.itemsAtendidos}" var="item"
+                                 selectionMode="single" selection="#{reporteController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.id}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update=" viewButton  "/>
+                        <p:ajax event="rowUnselect" update=" viewButton"/>
+
+                        <p:column filterBy="#{item.equipo}" filterMatchMode="contains">
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteTitle_equipo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.equipo}"/>
+                        </p:column>
+
+                        <p:column filterBy="#{item.lugar.nombre}" filterMatchMode="contains">
+                            <f:facet name="header">
+                                <h:outputText value="Area"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lugar.nombre}"/>
+                        </p:column>
+                        <p:column filterBy="#{item.titulo}" filterMatchMode="contains">
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteTitle_titulo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.titulo}"/>
+                        </p:column>
+                        <p:column filterBy="#{item.solucion}" filterMatchMode="contains">
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteTitle_solucion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.solucion}"/>
+                        </p:column>
+                        <p:column filterBy="#{item.usuario}" filterMatchMode="contains">
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteTitle_usuario}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usuario}"/>
+                        </p:column>
+                        <p:column filterBy="#{item.especialista}" filterMatchMode="contains">
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteTitle_especialista}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.especialista}"/>
+                        </p:column>
+
+                        <p:column filterBy="#{item.fechaSolucion}" filterMatchMode="contains">
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteTitle_fechaSolucion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaSolucion}"/>
+                        </p:column>
+                        <p:column filterBy="#{item.telefono}" filterMatchMode="contains">
+                            <f:facet name="header">
+                                <h:outputText value="Teléfono"/>
+                            </f:facet>
+                            <h:outputText value="#{item.telefono}"/>
+                        </p:column>
+
+
+                        <f:facet name="footer">
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":ReporteViewForm" oncomplete="PF('ReporteViewDialog').show()" disabled="#{empty reporteController.selected}"/>
+                            <p:commandButton value="Export as Excel" ajax="false">
+                                <p:dataExporter type="xls" target="datalist" fileName="reportes_atendidos"/>
+                            </p:commandButton>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

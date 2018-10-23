@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="body">
+            <h:panelGrid columns="3" columnClasses="left,right" style="width:100%" >
+                
+                <p:chart type="bar" model="#{reporteController.model}" style="width:600px;" />
+                <p:chart type="pie" model="#{reporteController.pieModel2}" style="width:600px;height:300px" />  
+                <p></p> <p:chart type="bar" model="#{reporteController.model1}" style="width:600px;"  />
+            </h:panelGrid>
+        </ui:define>
+    </ui:composition>
+
+</html>
+

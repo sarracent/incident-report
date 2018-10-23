@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+<p:dialog id="ReporteCreateDlg" widgetVar="ReporteCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateReporteTitle}">
+            <h:form id="ReporteCreateForm">
+                <h:panelGroup id="display">
+                    <h:panelGrid columns="2" style="width: 100px" rendered="#{reporteController.selected != null}">
+                        
+                        <p:outputLabel value="UEB:" for="lugar" />
+                        <p:selectOneMenu style=" width: 400px;color: #206984"  id="lugar" value="#{reporteController.selected.lugar}"  >
+                             <p:ajax listener="#{reporteController.valor()}"  update="nombreDireccion" />
+                             <f:selectItem itemValue="" itemLabel="--seleccione--"  noSelectionOption="true" />
+                           
+                           <f:selectItems value="#{lugarController.itemsAvailableSelectOne}" 
+                                           var="lugar"
+                                           itemValue="#{lugar}"
+                                           itemLabel="#{lugar.nombre}"/>
+ 
+                        </p:selectOneMenu>
+                        <p:outputLabel value="Dirección:" for="nombreDireccion" />
+                        <p:selectOneMenu style=" width: 400px;color: #206984" id="nombreDireccion" value="#{reporteController.selected.area}" >
+                            <p:ajax listener="#{reporteController.crearComputadoras()}" update="equipo" />
+                            <f:selectItem itemValue="" itemLabel="--seleccione--"  noSelectionOption="true" />
+                            <f:selectItems value="#{reporteController.listdir}"
+                                           var="nombreDireccionItem"
+                                           itemValue="#{nombreDireccionItem.nombre}"
+                                           itemLabel="#{nombreDireccionItem.nombre}"/>
+                        </p:selectOneMenu>  
+                        
+                       
+                        <p:outputLabel  value="#{bundle.CreateReporteLabel_equipo}" for="equipo" />
+                        <p:selectOneMenu style="width: 400px;color: #206984" id="equipo" value="#{reporteController.selected.equipo}" >
+                            <f:selectItem itemValue="" itemLabel="--seleccione--"  noSelectionOption="true" />
+                            <f:selectItems value="#{reporteController.computadoras}"
+                                           var="equipoItem"
+                                           itemValue="#{equipoItem.nombrePc}" itemLabel="#{equipoItem.nombrePc}"/>
+                        </p:selectOneMenu>
+
+                        <p:outputLabel value="#{bundle.CreateReporteLabel_titulo}" for="titulo" />
+                        <p:selectOneMenu style=" width: 400px;color: #206984" id="titulo" value="#{reporteController.selected.titulo}"  required="true">
+                            <f:selectItems value="#{tituloReporteController.itemsAvailableSelectOne}"
+                                           var="tituloItem" 
+                                           itemValue="#{tituloItem.titulo}" itemLabel="#{tituloItem.titulo}"/>
+                        </p:selectOneMenu>
+                          <p:outputLabel value="teléfono o ext." for="telefono" />
+                          <p:inputText style=" width: 420px; background: white;color: #206984"  id="telefono" value="#{reporteController.selected.telefono}" title="#{bundle.CreateReporteTitle_observacion}" />
+                      
+                        <p:outputLabel value="#{bundle.CreateReporteLabel_observacion}" for="observacion" />
+                        <p:inputTextarea style="color: #206984; width: 413px; background: white;color: #206984"  required="true" rows="8" id="observacion" value="#{reporteController.selected.observacion}" title="#{bundle.CreateReporteTitle_observacion}" />
+
+                    </h:panelGrid>
+                    <p:commandButton actionListener="#{reporteController.create}" value="#{bundle.Save}" update="display,:growl" oncomplete="handleSubmit(args,'ReporteCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ReporteCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+    </ui:composition>
+    </html>

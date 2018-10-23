@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ReporteViewDlg" widgetVar="ReporteViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewReporteTitle}">
+            <h:form id="ReporteViewForm">
+                <h:panelGroup id="display">
+                    <h:panelGrid columns="2" rendered="#{reporteController.selected != null}">
+                         <h:outputText value="#{bundle.ViewReporteLabel_equipo}"/>
+                        <h:outputText value="#{reporteController.selected.equipo}" title="#{bundle.ViewReporteTitle_equipo}"/>
+                        <h:outputText value="#{bundle.ViewReporteLabel_area}"/>
+                        <h:outputText value="#{reporteController.selected.area}" title="#{bundle.ViewReporteTitle_area}"/>
+                        <h:outputText value="#{bundle.ViewReporteLabel_titulo}"/>
+                        <h:outputText value="#{reporteController.selected.titulo}" title="#{bundle.ViewReporteTitle_titulo}"/>         
+                        <h:outputText value="#{bundle.ViewReporteLabel_observacion}"/>
+                        <h:outputText value="#{reporteController.selected.observacion}" title="#{bundle.ViewReporteTitle_observacion}"/>
+                        <h:outputText value="#{reporteController.selected.solucion}" title="#{bundle.ViewReporteTitle_solucion}"/>  
+                        <h:outputText value="#{bundle.ViewReporteLabel_usuario}"/>
+                        <h:outputText value="#{reporteController.selected.usuario}" title="#{bundle.ViewReporteTitle_usuario}"/>
+                        <h:outputText value="#{bundle.ViewReporteLabel_especialista}"/>
+                        <h:outputText value="#{reporteController.selected.especialista}" title="#{bundle.ViewReporteTitle_especialista}"/>
+                        <h:outputText value="#{bundle.ViewReporteLabel_fechaCreado}"/>
+                        <h:outputText value="#{reporteController.selected.fechaCreado}" title="#{bundle.ViewReporteTitle_fechaCreado}"/>
+                        <h:outputText value="#{bundle.ViewReporteLabel_fechaSolucion}"/>
+                        <h:outputText value="#{reporteController.selected.fechaSolucion}" title="#{bundle.ViewReporteTitle_fechaSolucion}"/>
+                        <h:outputText value="#{bundle.ViewReporteLabel_estadoReporte}"/>
+                        <h:outputText value="#{reporteController.selected.estadoReporte}" title="#{bundle.ViewReporteTitle_estadoReporte}"/>
+                        </h:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="ReporteViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,153 @@
+
+
+.ui-widget {
+   
+    font-size: 12px !important;
+ 
+}
+.ui-layout-north {
+    z-index: 20 !important;
+    overflow: visible !important;;
+    color: white !important;
+     border: 0px;
+}
+
+
+
+.ui-layout-north .ui-layout-unit-content {
+    overflow: visible !important;
+    background-color: white;
+     color: white !important;
+}
+.ui-widget-header {
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #0088a5;
+}
+.ui-button {
+    margin-top: 10px !important;
+    background-color: #f44f4f;
+}
+
+.ui-layout-unit .ui-widget .ui-widget-content{
+     background-color: white;
+     color: #0088a5 !important;
+}
+
+.ui-layout-unit-content .ui-widget-content {
+    background-color: #0088a5; 
+    border: 0px;
+   
+    
+}
+
+.ui-layout-unit-header{
+ font-size: 22px; 
+     color: #0088a5;
+     background-color: white;
+         border: 0px;
+}
+
+.ui-menubar .ui-menuitem-text{
+   
+     color: white !important;
+    
+     font-weight: bold;
+}
+
+
+
+.ui-menubar .ui-menu{
+  
+    background-color: #206984
+}
+
+
+
+.ui-layout-unit-content .ui-widget-content .ui-menu .ui-menubar .ui-widget .ui-widget-content {
+    border: 0px;
+   background-color: white ;
+    
+}
+
+.ui-panel-titlebar {
+    color: white
+}
+
+
+.ui-widget .ui-menubar .ui-widget .ui-widget-content :hover{
+ border: 0px
+}
+
+.ui-layout-north{
+    background-color: white;
+    border: 0px; 
+}
+.ui-layout-center{
+   border: 0px;
+     
+}
+
+.ui-layout-center{
+bottom: 0;
+    display: block;
+    height: 270px;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 86px !important;
+    visibility: visible;
+    width: 1362px;
+    z-index: 0;
+    
+}
+
+.ui-menubar .ui-widget-content{
+    
+  color: white
+}
+
+.ui-widget .ui-menubar .ui-widget .ui-widget-content{
+    background-color: #0088a5;
+    border: 0px
+}
+
+.ui-menu-list .ui-helper-reset:hover{
+    background-color: #0088a5;
+    border: 0px
+    
+}
+
+.ui-panel {
+
+}
+
+.login{
+    height: 50px;
+    font-size: 30px;
+    width: 200px;
+    
+    border-radius: 10px 10px 10px 10px
+        
+    
+}
+
+.maquetacion_login{
+    
+    margin-left: 40%;
+    margin-top: 10%
+}
+
+.login_button{
+    height: 50px;
+    font-size: 20px;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 50px;
+    border-radius: 10px 10px 10px 10px
+}
+
+form .formularios{
+    width: 500px
+}

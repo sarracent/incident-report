@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <h:head>
+        <title><ui:insert name="title">Default Title</ui:insert></title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+
+        <h:outputScript library="js" name="jsfcrud.js"/>
+    </h:head>
+
+    <h:body>
+
+        <p:growl id="growl" life="3000" />
+
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="105"  header="Reporte de Incidencias">
+                <h:form id="menuForm">
+                    <p:menubar>
+                        <p:menuitem value="Reportes no atendidos" class="menuitemuser" outcome="/reporte/List_admin.xhtml"  ajax="false" />
+                         <p:menuitem value="Reportes aplazados " class="menuitemuser" outcome="/reporte/List_admin_Aplazados.xhtml" ajax="false" />   
+                        <p:menuitem value="Reportes atendidos" class="menuitemuser" outcome="/reporte/List_admin_Atendidos.xhtml"  ajax="false" />
+                        <p:menuitem value="Título reporte" class="menuitemuser" outcome="/tituloReporte/List.xhtml" />
+                         <p:menuitem value="Usuarios" class="menuitemuser" outcome="/usuarios/List.xhtml" />
+                       
+                        <p:menuitem value="Estadísticas" class="menuitemuser" outcome="/reporte/Estadisticas" />
+
+                        
+                        <p:menuitem  class="menuitemuser" value="#{sessionScope['Especialista']}" style="right: 110px;position: absolute" icon="fa fa-user"/>
+                        <p:menuitem value="Salir" class="menuitemuser" action="#{user.logout()}" style="right: 20px;position: absolute" icon="fa fa-close"/>
+
+                    </p:menubar>
+                </h:form>
+               
+            </p:layoutUnit>
+
+
+
+            <p:layoutUnit position="center"  style="margin-top: -10px">
+                <ui:insert name="body"/>
+            </p:layoutUnit>
+
+        </p:layout>
+
+    </h:body>
+
+</html>

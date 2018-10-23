@@ -1,0 +1,173 @@
+.ui-widget {
+
+    font-size: 13px !important;
+}
+
+.ui-growl {
+    left:40%;
+
+    color: white
+}
+
+.ui-growl {
+    left:40%;
+
+}
+
+.menuitemuser{
+   
+color: white !important
+   
+}
+.menuitemuser:hover{
+    background: #0088a5 !important;
+
+   
+}
+.ui-layout-north {
+
+    z-index: 20 !important;
+    overflow: visible !important;
+}
+.ui-layout-north .ui-layout-unit-content {
+    overflow: visible !important;
+}
+.ui-widget-header {
+
+    text-align: center;
+    text-transform: uppercase;
+
+}
+.ui-button {
+    margin-top: 10px !important;
+    border-radius: 30px;
+    border: none;
+ 
+
+}
+
+/**panel titulo**/
+.ui-widget-header {
+    font-size: 32px;
+    color:white;
+    background: #0088a5;
+    border: none;
+
+}
+
+.ui-layout-north{
+
+    border: 0px;
+}
+
+/**Menu**/
+.ui-menu{
+    background: #0088a5;  
+
+
+}
+
+.ui-menuitem-text{
+    color: white;
+    font-size: 16px;
+}
+
+/**Listados**/
+
+
+
+
+.ui-widget .ui-widget-content .ui-widget-header {
+    font-size: 16px;
+    color:#0088a5;
+    background: #bee2ed;
+    border: none;
+
+
+}
+
+.ui-widget .ui-widget-content .ui-state-default .ui-button{
+    font-size: 9px;
+    color:white;
+    background:#bee2ed;
+
+}
+
+.ui-widget .ui-widget-content .ui-state-highlight {
+    font-size: 13px;
+    color:white;
+    background:#0088a5;
+    border: none;
+}
+.ui-widget .ui-widget-content .ui- .ui-state-hover {
+    font-size: 8px;
+    color:#206984;
+    background:white;
+    border: none;
+}
+
+
+/**menu desplegable**/
+.ui-menu-list{
+    background: #0088a5;  
+}
+
+.ui-menu-list .ui-state-hover{
+    background-color: #0c3241;
+    border: 0px 
+}
+
+
+/**
+growl
+**/
+.ui-growl-item-container { 
+    background:#0088a5;
+    border: none;
+
+} 
+
+
+
+.login{
+     padding: 5px;
+    text-align: center;
+    border: 1px powderblue solid; 
+
+    font-size: 24px;
+    text-align: center;
+    width: 200px;
+
+    margin-left: 41%;
+    position: relative;
+
+
+    border-radius: 75px 75px 75px 75px;
+    -moz-border-radius: 75px 75px 75px 75px;
+    -webkit-border-radius: 75px 75px 75px 75px;
+    border: 0px solid #000000;
+
+}
+
+
+.ui-input-login{
+    font-style: italic;
+    font-size: 17px !important;
+    height: 20px;
+}
+
+
+#boton{
+    
+     background: darkseagreen  !important;
+}
+
+
+#prueba{
+
+
+    position: relative;
+    top: 200px;
+    animation-name: example;
+    animation-duration: 2s;
+}

@@ -1,0 +1,37 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : ago 30, 2016, 1:54:35 a.m.
+    Author     : harold
+*/
+
+.login{
+    height: 50px;
+    font-size: 30px;
+    width: 200px;
+ 
+    border-radius: 10px 10px 10px 10px
+    
+}
+
+.maquetacion_login{
+    
+    margin-left: 40%;
+    margin-top: 10%
+}
+
+.login_button{
+    height: 50px;
+    font-size: 20px;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 50px;
+    border-radius: 10px 10px 10px 10px
+}
+
+form .formularios{
+    width: 500px
+}
